@@ -1,0 +1,19 @@
+{
+    "name": "twitter_source",
+    "config": {
+        "connector.class": "com.github.jcustenborder.kafka.connect.twitter.TwitterSourceConnector",
+        "twitter.oauth.accessToken": "TWITTER_ACCESS_TOKEN",
+        "twitter.oauth.consumerSecret": "TWITTER_API_SECRET_KEY",
+        "twitter.oauth.consumerKey": "TWITTER_API_KEY",
+        "twitter.oauth.accessTokenSecret": "TWITTER_ACCESS_TOKEN_SECRET",
+        "kafka.delete.topic": "twitter_deletes_json_01",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": false,
+        "key.converter.schemas.enable": false,
+        "kafka.status.topic": "twitter_json",
+        "process.deletes": true,
+        "filter.keywords": "chargers",
+        "tasks.max": "1"
+    }
+}

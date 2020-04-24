@@ -1,0 +1,22 @@
+{
+    "name": "memsql_sink",
+    "config": {
+        "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+        "tasks.max": "1",
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "key.converter.schemas.enable": false,
+        "value.converter": "io.confluent.connect.avro.AvroConverter",
+        "value.converter.schemas.enable": true,
+        "value.converter.schema.registry.url": "http://schemaregistry:8081",
+        "topics": "TWITTER_OUT_AVRO",
+        "connection.url": "jdbc:mysql://memsql:3306/db",
+        "connection.user": "root",
+        "dialect.name": "MySqlDatabaseDialect",
+        "insert.mode": "insert",
+        "batch.size": "88",
+        "table.name.format": "tweets",
+        "pk.mode": "none",
+        "auto.create": false,
+        "max.retries": "1"
+    }
+}
