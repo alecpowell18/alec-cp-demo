@@ -13,7 +13,7 @@
         "key.converter.schemas.enable": false,
         "kafka.status.topic": "twitter_json",
         "process.deletes": true,
-        "filter.keywords": "chargers",
+        "filter.keywords": "$GOOG, Alphabet, Google, GOOG",
         "tasks.max": "1"
     }
 }

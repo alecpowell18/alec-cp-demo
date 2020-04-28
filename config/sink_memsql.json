@@ -8,15 +8,16 @@
         "value.converter": "io.confluent.connect.avro.AvroConverter",
         "value.converter.schemas.enable": true,
         "value.converter.schema.registry.url": "http://schemaregistry:8081",
-        "topics": "TWITTER_OUT_AVRO",
+        "topics": "COUNTS_AGG",
         "connection.url": "jdbc:mysql://memsql:3306/db",
         "connection.user": "root",
         "dialect.name": "MySqlDatabaseDialect",
-        "insert.mode": "insert",
-        "batch.size": "88",
-        "table.name.format": "tweets",
-        "pk.mode": "none",
-        "auto.create": false,
+        "insert.mode": "upsert",
+        "batch.size": "100",
+        "table.name.format": "${topic}_table",
+        "pk.mode": "record_value",
+        "pk.fields": "LOCATION",
+        "auto.create": true,
         "max.retries": "1"
     }
 }
