@@ -1,6 +1,8 @@
 # alec-cp-demo
 Customized version of cp-demo.
 
+![screenshot](./screenshot.png?raw=true "Demo Topology")
+
 Alec Powell (apowell@confluent.io)
 
 Last Updated: 04-24-20 for Confluent Platform 5.5.0
